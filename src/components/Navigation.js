@@ -18,9 +18,13 @@ export default function Navigation() {
          <Link to="/categories" className='nav-link'>Categories</Link>
          </>
         }
-         <Link to="/login" className='nav-link'>Login</Link>
          <Link to="/bootstrap" className='nav-link'>Bootstrap</Link>
          <Link to="/routing" className="nav-link">Routing/Auth</Link>
+         {currentUser ? (
+            <Nav.Link onClick={() => logout()}>Logout</Nav.Link>
+          ) : (
+            <Nav.Link onClick={() => authenticate()}>Login</Nav.Link>
+          )}
       </Nav>
     </Navbar.Collapse>
 </Navbar>

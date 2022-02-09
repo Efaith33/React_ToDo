@@ -1,7 +1,6 @@
 import './App.css';
 import Bootstrap from './components/Bootstrap/Bootstrap';
 import Navigation from './components/Navigation';
-import Resources from './components/Resources/Resources'
 import Login from './components/Auth/Login'
 import Todo from './components/Todo/Todo'
 import Categories from './components/Categories/Categories';
@@ -20,10 +19,9 @@ function App() {
        <Navigation />
        <Routes>
          {/* For every route we want to, we can point the router to load a specific component. */}
-         <Route path="/" element={<ProtectedRoute><Resources /></ProtectedRoute>}/>
+         <Route path="/" element={<Login />} />
          <Route path="login" element={<Login />}/>
          <Route path="todo" element={<ProtectedRoute><Todo /></ProtectedRoute>}/>
-         <Route path="resources" element={<ProtectedRoute><Resources /></ProtectedRoute>}/>
          <Route path="categories" element={<ProtectedRoute><Categories /></ProtectedRoute>}/>
          <Route path="bootstrap" element={<Bootstrap />}/>
          <Route path="routing" element={<Routing />}/>
